@@ -1,0 +1,85 @@
+@use "../util/" as u;
+.articles {
+  padding-inline: map-get(u.$mobile-style, padding-inline) + 0.5;
+
+  > div {
+    margin-bottom: 1.5rem;
+    h2 {
+      text-align: u.getAlignment(default);
+    }
+  }
+
+  > .article {
+    margin-bottom: 3.5rem;
+    text-align: u.getAlignment(default);
+
+    a {
+      margin: 0 auto;
+     
+    }
+
+    > .article-text {
+      padding-inline: 1.8rem;
+      margin-top: 2.5rem;
+      text-align: u.getAlignment(custom);
+      background-color: u.$white ;
+
+
+      p {
+        margin-bottom: 0.7rem;
+        // font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@include u.breakpoints-up(medium) {
+  .articles {
+    @include u.about-us-grid(2, 1fr);
+    // grid-auto-rows:minmax(auto, 20rem);
+    grid-gap: 2rem;
+    padding-inline: 4.5em;
+
+    > div {
+      grid-column: 1 / 3;
+      margin-bottom: 0;
+      h2 {
+        text-align: u.getAlignment(custom);
+      }
+    
+    }
+    > .article {
+      margin: 0;
+     
+      }
+    }
+  }
+
+@include u.breakpoints-up(large) {
+  .articles {
+    @include u.about-us-grid(4, 1fr);
+    grid-gap: 1rem;
+    padding-inline: 3em;
+    > div {
+      grid-column: 1 / 5;
+      h2 {
+        text-align: u.getAlignment(custom);
+      }
+    }
+    > .article {
+      > .article-text {
+        padding-inline: 0;
+      }
+    }
+  }
+}
+@include u.breakpoints-up(ex-large) {
+  .articles {
+    @include u.about-us-grid(4, 1fr);
+    padding-inline: 7rem;
+   
+    > div {
+      grid-column: 1 / 5;
+    }
+  }
+}

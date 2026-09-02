@@ -1,0 +1,27 @@
+//utility classes
+.grid {
+  display: grid;
+}
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+.space-between {
+  justify-content: space-between;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+.text-center {
+  text-align: center;
+}
+.full-column {
+  grid-column: 1 / -1;
+}
+.display-none {
+  display: none;
+}
+

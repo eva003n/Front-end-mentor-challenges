@@ -1,0 +1,46 @@
+@use "../util/" as u;
+@use "./variables" as c;
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 1rem;
+  line-height: 1.3;
+  font-family: u.$font;
+  min-height: 100vh;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+}
+a {
+
+  &:hover,
+  &focus {
+    cursor: pointer;
+  }
+}
+
+.cta-btn {
+  background: linear-gradient(to right, c.$lime-green, c.$bright-cyan);
+  padding: 0.6em 1.5em;
+  border-radius: 1.5em;
+  color: c.$white;
+  display: inline-block;
+}
+.cta-btn:hover,
+.cta-btn:focus {
+  filter: brightness(110%);
+  color: c.$white;
+}

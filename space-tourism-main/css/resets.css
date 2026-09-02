@@ -1,0 +1,60 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+*,*::before,*::after {
+    box-sizing: inherit;
+
+}
+body,h1,h2,h3,h4,h5,p,figure,picture {
+    margin: 0;
+}
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+img, picture {
+    max-width: 100%;
+    vertical-align: middle;
+}
+input,button,textarea, select {
+    font: inherit;
+}
+@media (prefers-reduced-motion: reduce) {  
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  /* utility classes */
+  .flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+
+  }
+  .grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+
+  }
+  .wrapper {
+    margin-inline:auto;
+    width: min(calc(100% - 40px, 70rem));
+  }
+  /* screen reader */
+  .sr-only {
+    position: absolute; 
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px; 
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+  }
+

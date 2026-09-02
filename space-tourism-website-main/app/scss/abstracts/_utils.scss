@@ -1,0 +1,228 @@
+/*    Utility classes     */
+/*---general---*/
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+.grid-container {
+  display: grid;
+  column-gap: var(--gap, 1rem);
+   text-align: center;
+  place-items: center;
+}
+.block {
+  display: block;
+}
+.container {
+  width: min(calc(100% - 40px), 80rem);
+  margin-inline: auto;
+  padding-inline: 2em;
+}
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flw-space, 1rem);
+  background-color: #fff;
+}
+.sc-only {
+  position: absolute; /*csreen readers only*/
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/*--backgrounds---*/
+.bg-dark {
+  background-color: hsl(var(--primary-color));
+}
+.bg-accent {
+  background-color: hsl(var(--secondary-color));
+}
+.bg-light {
+  background-color: hsl(var(--white));
+}
+/*--text color*/
+.text-dark {
+  color: hsl(var(--primary-color));
+}
+.text-accent {
+  color: hsl(var(--secondary-color));
+}
+.text-white {
+  color: hsl(var(--white));
+}
+/*--Typography---*/
+.fz-900 {
+  font-size: var(--fz-900);
+}
+.fz-800 {
+  font-size: var(--fz-800);
+}
+.fz-700 {
+  font-size: var(--fz-700);
+}
+.fz-600 {
+  font-size: var(--fz-600);
+}
+.fz-500 {
+  font-size: var(--fz-500);
+}
+.fz-400 {
+  font-size: var(--fz-400);
+}
+.fz-300 {
+  font-size: var(--fz-300);
+}
+.fz-200 {
+  font-size: var(--fz-200);
+}
+/*--font family*/
+.ff-barlow {
+  font-family: var(--ff-barlow-normal);
+}
+.ff-cond {
+  font-family: var(--ff-barlow-conds);
+}
+.ff-bell {
+  font-family: var(--ff-bellefair);
+}
+.letter-spacing-2 {
+  letter-spacing: 4px;
+}
+.letter-spacing-1 {
+  letter-spacing: 2px;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.fz-900,
+.fz-800,
+.fz-700c,
+.fz-600 {
+  line-height: 1.1;
+}
+.numbered-title {
+  color: hsl(var(--secondary-color) / 0.3);
+  font-weight: 700;
+  font-family: var(--ff-barlow-conds);
+}
+/*components*/
+.large-button {
+  position: relative;
+  display: inline grid;
+  padding-inline: 3em;
+  place-items: center;
+  text-decoration: none;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  // z-index: 1;
+  isolation: isolate;
+}
+.large-button::after {
+  content: "";
+  position: absolute;
+  padding-inline: 2em;
+  background-color: hsl(var(--secondary-color) / 0.15);
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.5s ease-in-out;
+}
+.large-button:hover::after,
+.large-button:focus::after {
+  transform: scale(1.5);
+  opacity: 1;
+}
+/* tab list*/
+.primary-nav {
+  --gap: 8rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.primary-nav a {
+  text-decoration: none;
+}
+.primary-nav a > span {
+  font-weight: 700;
+  margin-right: 0.5em;
+}
+.underline-indicators > * {
+  cursor: pointer;
+  padding-block: var(--underline-gap, 1rem);
+  border: 0;
+  border-bottom: 0.2em solid hsl(var(--white) / 0);
+}
+.underline-indicators > *:hover,
+.underline-indicators > *:focus {
+  border-color: hsl(var(--white) / 0.5);
+}
+.underline-indicators > .active,
+.underline-indicators > [aria-selected="true"] {
+  color: hsl(var(--white) / 1);
+  border-color: hsl(var(--white) / 1);
+}
+.tab-list {
+  --gap: 2rem;
+}
+.dot-indicators > * {
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  margin-top: 2rem;
+  padding: 0.5em;
+  background-color: hsl(var(--white) / 0.25);
+}
+.dot-indicators > *:hover,
+.dot-indicators > *:focus {
+  background-color: hsl(var(--white) / 0.5);
+}
+.dot-indicators > [aria-selected="true"] {
+  background-color: hsl(var(--white) / 1);
+}
+.numbered-indicators {
+  flex-direction: column;
+  align-items: center;
+}
+.numbered-indicators > * {
+  cursor: pointer;
+  border-radius: 50%;
+  padding-inline: 1em;
+  aspect-ratio: 1;
+  border: 0;
+  outline: 1.5px solid hsl(var(--secondary-color) / 0.15);
+  transition: all 0.3s ease-in-out;
+}
+.numbered-indicators > *:hover,
+.numbered-indicators > *:focus {
+  outline-color: hsl(var(--secondary-color) / 1);
+}
+.numbered-indicators > [aria-selected="true"] {
+  background-color: hsl(var(--white) / 1);
+  color: hsl(var(--primary-color));
+  outline: 0;
+}
+//breakpoints
+@media screen and (min-width: 48em) {
+  .grid-container {
+    grid-template-columns: minmax(var(--space-lf, 0), 1fr) repeat(
+        var(--cols, 4),
+        calc(
+          calc(
+              min(100% - var(--space-lr, 2rem), var(--mid-width)) -
+                var(--cols, calc(var(--cols) - 1)) * var(--gap)
+            ) / var(--cols)
+        )
+      ) minmax(var(--space-rt, 0), 1fr);
+    align-items: center;
+  }
+  
+}
+

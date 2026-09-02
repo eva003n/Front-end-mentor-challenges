@@ -1,0 +1,486 @@
+/* sora-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/sora-v17-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* sora-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/assets/fonts/sora-v17-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* sora-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/sora-v17-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+  --green-500: hsl(140, 63%, 57%);
+  --red-500: hsl(354, 63%, 57%);
+  --yellow-400: hsl(49, 85%, 70%);
+
+  --blue-600: hsl(214, 100%, 55%);
+  --blue-400: hsl(210, 100%, 65%);
+
+  --neutral-900: hsl(0, 0%, 7%);
+  --neutral-800: hsl(0, 0%, 15%);
+  --neutral-500: hsl(240, 3%, 46%);
+  --neutral-400: hsl(240, 1%, 59%);
+  --neutral-0: hsl(0, 0%, 100%);
+
+  --fz-sm: 1rem;
+
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-700: 700;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* min-height: 100svh; */
+  font-size: var(--fz-sm);
+  background: var(--neutral-900);
+  padding-block: 1rem;
+  color: var(--neutral-0);
+  font-family: "Sora", sans-serif;
+  font-weight: var(--fw-400);
+  flex-direction: column;
+}
+
+img {
+  vertical-align: middle;
+  height: auto;
+  max-width: 100%;
+}
+ul {
+  list-style: none;
+}
+button {
+  border: none;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: var(--fw-700);
+  justify-content: center;
+  align-items: center;
+}
+input, label, textarea {
+  font: inherit;
+
+}
+
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.header {
+  align-self: baseline;
+  align-items: center;
+  /* padding-inline: 1rem; */
+  width: min(90%, 75rem);
+  margin: auto;
+  flex-wrap: nowrap;
+}
+.header-top {
+  justify-content: space-between;
+}
+
+.logo-lrg {
+  display: none;
+}
+
+.header-top .header-right {
+  align-items: center;
+}
+.personal-best-txt {
+  color: var(--neutral-500);
+}
+/* Element needs to be blovk or inline block for this to apply */
+.personal-best-txt::first-letter {
+  text-transform: uppercase;
+}
+.personal-txt {
+  display: none;
+}
+.typing-unit {
+  color: var(--neutral-0);
+}
+
+.header-bottom {
+  color: var(--neutral-400);
+  flex-direction: column;
+}
+.unit-value,
+.accuracy,
+.time {
+  flex-direction: column;
+}
+
+.stats > * > p {
+  color: var(--neutral-400);
+}
+.stats > * > span {
+  --fz-sm: 1.5rem;
+  font-weight: var(--fw-600);
+  font-size: var(--fz-sm);
+}
+.unit-value > span {
+  color: var(--neutral-0);
+}
+.accuracy > span {
+  color: var(--red-500);
+}
+.time > span {
+  color: var(--yellow-400);
+}
+.header-bottom .header-left {
+  text-align: center;
+}
+.header-bottom .header-left > * {
+  flex-grow: 1;
+}
+.header-bottom .header-left > *:not(:last-child) {
+  border-right: 1px solid var(--neutral-500);
+}
+
+.header-bottom .header-right {
+  justify-content: space-between;
+}
+
+.difficulty-txt,
+.mode-txt {
+  display: none;
+  color: var(--neutral-500);
+}
+
+/* Custom select */
+.custom-select {
+  position: relative;
+  width: 150px;
+  color: var(--neutral-0);
+}
+.select-button {
+  --gap: 0.5rem;
+  border: 1px solid var(--neutral-500);
+  padding: 8px 20px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* When drop down is closed arrows point up */
+.arrow-down {
+  transform: rotate(180deg);
+}
+
+.select-dropdown {
+  /* display: none; */
+  position: absolute;
+  background: var(--neutral-800);
+  padding: 10px;
+  top: 40px;
+  z-index: 50;
+  right: 0;
+  left: 0;
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+.select-dropdown > * {
+  position: relative;
+}
+.select-dropdown li:nth-child(1)::after,
+.select-dropdown li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -10px; /* make horizontal line fill entire width of list */
+  left: -10px; /* make horizontal line fill entire width of list */
+  height: 1px;
+  bottom: -10px;
+  background: var(--neutral-500);
+}
+
+/* custom radio input */
+.form-control {
+  --gap: 0.5em;
+  grid-template-columns: 1em auto;
+  align-items: center;
+}
+
+input[type="radio"] {
+  display: grid;
+  place-content: center;
+  --webkit-appearance: none;
+  appearance: none; /* removes all inherited browser styles */
+  font: inherit;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+  color: currentColor;
+}
+
+input[type="radio"]:focus {
+  outline: max(2px 0.15em);
+  outline-offset: max(2px 0.15em);
+}
+
+/* dot in middle */
+input[type="radio"]::before {
+  content: "";
+  width: 0.475em;
+  height: 0.475em;
+  border-radius: 50%;
+  box-shadow: inset 1em 1em black;
+  transform: scale(0);
+  background-color: CanvasText; /* Windows high contrast mode */
+
+  transition: 120ms transform ease-in-out;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+section {
+  position: relative;
+  width: min(90%, 75rem);
+  /* total height - 2 * (1rem padding) + 1rem (gap) */
+  height: calc(100svh - 86px - 3rem);
+  margin: auto;
+  padding-block: 1rem;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 10;
+  background: transparent;
+  backdrop-filter: blur(5px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  font-weight: var(--fw-600);
+  display: none;
+}
+.overlay  button{   
+  background: var(--blue-600);
+  color: inherit;
+
+}
+section > div {
+    width: 100%;
+  height: 100%;
+}
+
+section > div > textarea {
+  /* letter-spacing: 2px; */
+  color: var(--neutral-400);
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  overflow: hidden;
+
+}
+.results {
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  display: none;
+
+}
+.results-top {
+  justify-content: center;
+}
+.results-top > div  {
+  flex-direction: column;
+  text-align: center;
+}
+.results-top > div > svg {
+  margin: auto;
+}
+.results-top > div > p {
+  color: var(--neutral-400);
+}
+.results-stats {
+  flex-direction: column;
+  /* align-self: flex-start; */
+}
+.results-stats > * {
+  border: 1.5px solid var(--neutral-500);
+  padding: 20px;
+  border-radius: 10px;
+}
+.results > .btn {
+  justify-content: center;
+
+}
+
+
+
+@media screen and (min-width: 43.75rem) {
+  .logo-lrg {
+    display: flex;
+    flex-shrink: 0;
+  }
+  .logo-sm {
+    display: none;
+  }
+
+  .header-bottom {
+    flex-direction: row;
+    /* gap: 140px; */
+    /* justify-content: space-between; */
+  }
+
+  .header-bottom .header-left > * {
+    align-items: center;
+  }
+  .header-bottom .header-left > * > span {
+    color: var(--neutral-0);
+  }
+
+  .header-bottom .header-right {
+    flex-grow: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    /* margin-left:  30%; */
+  }
+
+  .difficulty {
+    justify-content: flex-end;
+  }
+  .difficulty,
+  .mode {
+    flex-grow: 1;
+    align-items: center;
+  }
+  .difficulty-txt {
+    margin-right: 5px;
+  }
+  .header-bottom .header-right .mode {
+    flex-grow: 1;
+
+    justify-content: flex-end;
+    /* margin-right: auto; */
+  }
+  .custom-select {
+    display: flex;
+    position: static;
+    width: auto;
+  }
+  .select-dropdown {
+    flex-direction: row;
+    position: static;
+    background: initial;
+    padding: initial;
+    /* gap: 4rem; */
+  }
+  .select-dropdown li {
+    padding: 2px 5px;
+    border-radius: 5px;
+    border: 1.5px solid var(--neutral-500);
+  }
+
+  .select-dropdown li > * {
+    display: block;
+    color: inherit;
+  }
+
+  .select-dropdown li[aria-selected="true"] {
+    border: 1.5px solid transparent;
+    background:
+      linear-gradient(var(--neutral-900), var(--neutral-900)) padding-box,
+      linear-gradient(180deg, var(--blue-600), var(--blue-400)) border-box,
+      linear-gradient(180deg, var(--blue-600), var(--blue-400));
+    background-clip: padding-box, border-box, text;
+    -webkit-background-clip: padding-box, border-box, text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .unit-value,
+  .accuracy,
+  .time {
+    flex-direction: row;
+    justify-items: center;
+  }
+
+  .difficulty-txt,
+  .mode-txt,
+  .personal-txt {
+    display: initial;
+  }
+
+  .header-bottom .header-left > *:not(:last-child) {
+    border-right: none;
+  }
+
+  .select-dropdown li:nth-child(1)::after,
+  .select-dropdown li:not(:last-child)::after {
+    display: none;
+  }
+
+  .select-button {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0); /* old browsers */
+    clip-path: inset(50%); /* modern browsers */
+    white-space: nowrap;
+    border-width: 0;
+  }
+  input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0); /* old browsers */
+    clip-path: inset(50%); /* modern browsers */
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .results {
+    --gap: 1.6rem;
+  }
+  .results-stats {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .results-stats > * {
+    flex-direction: row;
+    align-items: center;
+  }
+}

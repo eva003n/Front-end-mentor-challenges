@@ -1,0 +1,51 @@
+@use "../abstracts/" as a;
+h1 {
+  font-size: 2.8rem;
+  color: a.$verydarkBlue;
+  font-weight: map-get(a.$font-weights, bolder);
+  line-height: 1;
+  margin-block: 1.3rem;
+  max-width: 9ch;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: map-get(a.$font-weights, bold);
+  color: a.$softOrange;
+  margin-bottom: 1.2rem;
+}
+h3 {
+  font-size: 1.2rem;
+  color: a.$white;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease-in-out;
+}
+h3:hover {
+  color: a.$softOrange;
+  cursor: pointer;
+}
+p {
+  color: a.$darkgrayishBlue;
+  font-weight: map-get(a.$font-weights, normal);
+  margin-bottom: 1.4rem;
+  max-width: 50ch;
+}
+hr {
+  opacity: 0.5;
+  margin-bottom: 1.7rem;
+}
+.cta-button {
+  background: a.$softRed;
+  font-weight: map-get(a.$font-weights, bold);
+  text-transform: uppercase;
+  padding: 0.7em 2em;
+  margin-bottom: 2.7rem;
+  transition: all 0.3s ease-in-out;
+  border-radius: 0.1rem;
+}
+.cta-button:hover,
+.cta-button:focus {
+  background: a.$verydarkBlue;
+  color: a.$white;
+  font-weight: map-get(a.$font-weights, normal);
+  cursor: pointer;
+}

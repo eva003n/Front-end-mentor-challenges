@@ -1,0 +1,9 @@
+@use "../abstracts/" as a;
+footer {
+  @include a.responsive-width();
+  div {
+    margin-block: 2rem;
+    text-align: center;
+    color: a.$softOrange;
+  }
+}

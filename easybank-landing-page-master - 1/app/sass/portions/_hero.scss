@@ -1,0 +1,83 @@
+@use "../util/" as u;
+@mixin background-img() {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero {
+  margin-bottom: 7rem;
+  .brand-img {
+    background-image: url(/images/bg-intro-mobile.svg);
+    @include background-img();
+    background-position: center center;
+    min-height: 20rem;
+    position: relative;
+  }
+  .brand-img::before {
+    content: "";
+    position: absolute;
+    background-image: url(/images/image-mockups.png);
+    background-repeat: no-repeat;
+    background-size: 93%;
+    height: 100%;
+    width: 100%;
+    background-position: center bottom;
+  }
+  .intro {
+    padding-inline: map-get(u.$mobile-style, padding-inline);
+    text-align: u.getAlignment(default);
+  }
+}
+@include u.breakpoints-up(medium) {
+  .hero {
+    display: flex;
+    margin-bottom: 0;
+
+    .intro,
+    .brand-img {
+      flex: 1;
+    }
+    .brand-img {
+      background-image: url(/images/bg-intro-desktop.svg);
+      @include background-img();
+      background-position: right -15rem top -3rem;
+      order: 2;
+      min-height: 30rem;
+    }
+    .brand-img::before {
+      background-position: right center;
+    }
+    .intro {
+      order: 1;
+      text-align: u.getAlignment(custom);
+      align-self: center;
+      padding-inline: 4rem;
+    }
+  }
+}
+@include u.breakpoints-up(large) {
+  .hero {
+    .brand-img {
+      background-position: left -1rem top -4rem;
+      min-height: 40rem;
+      flex: 2;
+    }
+    .brand-img::before {
+      background-position: right -3rem top -6rem;
+    }
+  }
+}
+@include u.breakpoints-up(ex-large) {
+  .hero {
+    .intro {
+      flex: 2;
+      padding-left: 7rem;
+      h1,
+      p {
+        max-width: 65%;
+      }
+    }
+    .brand-img::before {
+      background-position: right -6rem center;
+    }
+  }
+}

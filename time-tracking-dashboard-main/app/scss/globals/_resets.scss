@@ -1,0 +1,47 @@
+@use '../utils' as u;
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+*,*::before,*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: map-get(u.$font-sixes, small );
+    font-family: var(--font-rubik);
+    font-weight: map-get(u.$font-weights, normal);
+    color:var(--white) ;
+    min-height: 100vh;
+    background-color: var(--Very-dark-blue) ;
+    padding-block: 30px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+ul {
+    list-style: none;
+    li {
+        display: inline-block;
+        a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}
+button {
+    background-color: transparent;
+    border: none;
+    &:hover {
+        cursor: pointer;
+    }
+    img {
+        transition: all .2s ease-in-out;
+    }
+    img:hover {
+        filter: brightness(200%);
+    }
+}

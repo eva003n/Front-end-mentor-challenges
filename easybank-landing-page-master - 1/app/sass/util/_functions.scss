@@ -1,0 +1,5 @@
+@use "./maps" as m;
+//about-us
+@function getAlignment($align) {
+  @return map-get(m.$text-alignment, $align);
+}

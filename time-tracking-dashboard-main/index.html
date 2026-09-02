@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <meta name="description" content="fruntend mentor challenge" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Time tracking dashboard</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="/dist/style.css" />
+  </head>
+  <body>
+    <main class="grid-main ">
+      <section class="user-profile js-user-profile">
+        <div class="user flex">
+          <div class="profile-image">
+            <img src="images/image-jeremy.png" alt="user image" width="60" height="60"/>
+          </div>
+          <div class="user-details">
+            <p class="report-for">Report for</p>
+            <p class="user-name">Jeremy Robson</p>
+          </div>
+        </div>
+        <ul class="timeline flex">
+          <li>
+            <button class="period js-period-daily" data-period="daily">Daily</button>
+          </li>
+          <li>
+            <button class="period js-period-weekly active " data-period="weekly">Weekly</button>
+          </li>
+          <li>
+            <button class="period js-period-monthly" data-period="monthly">Monthly</button>
+          </li>
+        </ul>
+      </section>
+       <div class="analysis js-time-analysis">
+        
+    </main>
+    <script src="app/js/script.js"></script>
+  </body>
+</html>

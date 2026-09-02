@@ -1,0 +1,5 @@
+//about us
+@mixin about-us-grid($columns, $size) {
+  display: grid;
+  grid-template-columns: repeat($columns, $size);
+}

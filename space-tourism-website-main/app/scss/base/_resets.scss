@@ -1,0 +1,66 @@
+/*Resets*/
+/* Box sizing */
+@use "../abstracts/" as *;
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+/*Set up the body*/
+body {
+  font-family: var(--ff-barlow-normal);
+  margin: 0;
+  min-height: 100vh; /*prevent shortpages from being an issue*/
+  line-height: 1.5;
+  color: hsl(var(--secondary-color));
+  display: grid;
+  // align-items: center;
+}
+.maim {
+  align-self: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  font-weight: 400;
+}
+/*make images easier to work with*/
+img,
+picture {
+  max-width: 100%;
+  vertical-align: middle;
+  height: auto;
+}
+input,
+button,
+textarea,
+select,
+picture,
+figure {
+  font: inherit; /*makes usre this elements inherit font p
+    roperties*/
+}
+button {
+  border: 0;
+}
+
+/*Accesibility purpose*/
+@media (prefers-reduce-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.1ms !important ;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,36 @@
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+.box{
+  background: lightblue;
+  padding: 3rem;
+  /* margin-inline: auto; */
+}
+.sc-only {
+  position: absolute; /*csreen readers only*/
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.container {
+  width: min(calc(100% - 40px), 62.5em);
+  margin-inline: auto;
+  padding-inline: 2em;
+}
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+  }
+  .call-to-action {
+    --gap: 5rem; /*way two*/
+    background: pink;
+    padding: 2rem;
+    border-radius: 1rem;
+  }

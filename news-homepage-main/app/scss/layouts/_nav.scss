@@ -1,0 +1,100 @@
+@use "../abstracts/" as a;
+.nav {
+  @include a.responsive-width();
+  @include a.flex(row);
+  justify-content: space-between;
+  align-items: end;
+  padding-block: 2em;
+  &__navbar {
+    position: fixed;
+    @include a.flex(column);
+    background: a.$white;
+    width: min(70%, 16.41rem);
+    min-height: 100svh;
+    right: -100%;
+    top: 0;
+    padding: 1.8em 1.3em;
+    &.opened-sidebar {
+      animation: slide_in 0.5s ease-in-out forwards;
+    }
+    &.closed-sidebar {
+      animation: slide_out 0.5s ease-in forwards;
+    }
+    #close-menu {
+      margin-left: auto;
+    }
+    ul {
+      list-style: none;
+      margin-top: 3rem;
+      li {
+        margin-block: 1.8rem;
+      }
+    }
+  }
+}
+@keyframes slide_in {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes slide_out {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -100%;
+  }
+}
+
+/*desktop*/
+@include a.breakpoint-up(medium) {
+  .nav {
+    @include a.responsive-width(100px);
+    margin: 0 auto;
+
+    #open-menu {
+      display: none;
+    }
+    &__navbar {
+      position: static;
+      width: auto;
+      min-height: auto;
+      padding: 0;
+
+      @include a.flex(row);
+      align-items: center;
+      top: auto;
+      #close-menu {
+        display: none;
+      }
+      ul {
+        margin: 0;
+        li {
+          margin: 0;
+          display: inline-block;
+          margin-left: 1rem;
+          a {
+            position: relative;
+            &::after {
+              content: "";
+              position: absolute;
+              width: 0;
+              height: 3px;
+              background: a.$softOrange;
+              left: 50%;
+              bottom: -0.6rem;
+              transform: translate(-50%);
+              transition: width 0.5s ease-in-out;
+            }
+            &:hover::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

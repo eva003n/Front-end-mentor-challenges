@@ -1,0 +1,60 @@
+:root {
+  --lime-green: 163 72% 41%;
+  --bright-red: 356 69% 56%;
+  --facebook: 208 92% 53%;
+  --twitter: 203 89% 53%;
+  --instagram: 37 97% 70%;
+  --youtube: 348 97% 39%;
+  --green: hsl(146, 68%, 55%); 
+
+}
+//light mode
+[data-theme="light"] {
+  --bg-color: 0 0% 100%;
+  --top-strip: 225 100% 98%;
+  // --card-bg: 228 12% 44%;
+  --card-bg: 227 47% 96%;
+  --card-light: 227 47% 96%;
+  --text-light: 228 12% 44%;
+  --text-crl: 230 17% 14%;
+  --toogle-bg: hsl(230, 22%, 74%);
+  --toogle-bg-dark:  hsl(230, 22%, 73%);
+  --timeline:  hsl(146, 68%, 55%);
+
+
+}
+
+//dark mode
+[data-theme="dark"] {
+  --bg-color: 230 17% 14%;
+  --top-strip: 232 19% 15%;
+   --card-bg: 228 28% 20%;
+  // --card-bg: ;
+  --card-light: 228 34% 66%;
+  --text-light: 231 16% 52%;
+  --text-clr: 0 0% 100%;
+  --timeline: hsl(231 16% 82%) ;
+  --toggle-bg: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+//   --bright-red: 356 69% 56%;
+}
+.bg-color {
+    background-color: hsl(var(--bg-color));
+}
+.top-strip {
+    background-color: hsl(var(--top-strip));
+}
+.card-bg {
+    background-color: hsl(var(--card-bg));
+}
+.text-color {
+    color: hsl(var(--text-clr));
+}
+.text-light {
+    color: hsl(var(--text-light));
+}
+.text-green {
+  color: var(--green);
+}
+.toogle-bg {
+    background: hsl(var(--toogle-bg));
+}

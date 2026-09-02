@@ -1,0 +1,30 @@
+@use "../utils/maps" as u;
+:root {
+  --ff-inter: "Inter", sans-serif;
+  --fz-normal: 0.875rem;
+  --fz-large: 3.5rem;
+}
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  background: hsl(var(--bg-color));
+  font-family: var(--ff-inter);
+  font-size: var(--fz-normal);
+  font-weight: map-get(u.$font-weights, bold);
+  color: var(--text-color);
+  margin: 0;
+  line-height: 1.3;
+  padding: 0;
+  min-height: 100vh;
+}
+img {
+  vertical-align: middle;
+  height: auto;
+}

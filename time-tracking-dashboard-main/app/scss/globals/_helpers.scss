@@ -1,0 +1,8 @@
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.time {
+    font-size: clamp(2rem, 1.515rem + 2.424vi, 3rem);
+}

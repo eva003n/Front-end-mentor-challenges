@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: #eee;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  max-width: 1440px;
+}
+header {
+  height: 100svh;
+  background-image: url(images/desktop/image-hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  isolation: isolate;
+}
+header .call-to-action {
+  display: flex;
+  justify-content: space-between;
+  height: 150px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.call-to-action nav {
+  height: 50px;
+  align-content: center;
+  margin-left: auto;
+  margin-right: 48px;
+}
+.call-to-action nav ul {
+  list-style: none;
+}
+.call-to-action nav li {
+  display: inline-block;
+  padding-inline: 1em;
+}
+.call-to-action nav ul li a {
+  color: #eee;
+  text-decoration: none;
+}
+.call-to-action .logo {
+  margin-left: 90px;
+}
+input {
+  margin-right: 20px;
+}
+
+label,
+input {
+  display: none;
+}
+
+.close-sidebar {
+  display: none;
+}
+header .intro {
+  border: 1.5px solid #eee;
+  width: min(86%, 30rem);
+  margin-left: 60px;
+  position: absolute;
+  bottom: 13%;
+  padding: 20px;
+  
+}
+header .intro h1 {
+  color: #fff;
+  font-weight: 100;
+  line-height: 1.6;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  max-width: 60%;
+  font-size: 1.6rem;
+}
+.section-1 {
+  padding: 85px;
+  color: #000;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+.section-1 .write-up {
+  /* align-content: end; */
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  grid-column: 3/ 5;
+}
+.write-up h1 {
+  font-weight: 200;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  /* padding: 20px; */
+}
+.section-1 .img {
+  grid-column: 1/ 3;
+  grid-row: 1/ 3;
+  clip-path: polygon(
+    0% 15%,
+    0 0,
+    15% 0%,
+    85% 0%,
+    100% 0,
+    100% 15%,
+    100% 35%,
+    79% 35%,
+    79% 100%,
+    15% 100%,
+    0 100%,
+    0% 85%
+  );
+}
+.section-1 .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.section-2 {
+  /* padding: 85px; */
+  padding: 4%;
+}
+.section-intro {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  padding-inline: 10%;
+}
+.section-intro button {
+  padding: 0.35em 1.3em;
+  background-color: white;
+  letter-spacing: 3px;
+  border: 1px solid #000;
+}
+.section-intro p {
+  font-weight: 200;
+  font-size: 1.3rem;
+  color: #000;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.section-2 .features {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, 160px); */
+  grid-template-columns: repeat(4, 160px);
+  /* grid-template-rows: repeat(auto-fit, 250px);  */
+  grid-gap: 20px;
+  justify-content: center;
+}
+.features .feature {
+  align-content: end;
+  padding: 10px;
+  height: 250px;
+}
+.feature h2 {
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 3px;
+}
+.feature:nth-child(1) {
+  background-image: url(images/desktop/image-deep-earth.jpg);
+  background-size: cover;
+}
+.feature:nth-child(2) {
+  background-image: url(images/desktop/image-night-arcade.jpg);
+  background-size: cover;
+}
+.feature:nth-child(3) {
+  background-image: url(images/desktop/image-soccer-team.jpg);
+  background-size: cover;
+}
+.feature:nth-child(4) {
+  background-image: url(images/desktop/image-grid.jpg);
+  background-size: cover;
+}
+.feature:nth-child(5) {
+  background-image: url(images/desktop/image-from-above.jpg);
+  background-size: cover;
+}
+.feature:nth-child(6) {
+  background-image: url(images/desktop/image-pocket-borealis.jpg);
+  background-size: cover;
+}
+.feature:nth-child(7) {
+  background-image: url(images/desktop/image-curiosity.jpg);
+  background-size: cover;
+}
+.feature:nth-child(8) {
+  background-image: url(images/desktop/image-fisheye.jpg);
+  background-size: cover;
+}
+#see-all {
+  border-radius: 3px;
+  padding: 0.6em 1.9em;
+  background-color: white;
+  letter-spacing: 3px;
+  border: 1px solid #000;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-block: 25px;
+  text-transform: uppercase;
+  font-size: 12px;
+  display: none;
+  transition: background-color 0.5s color 0.5s;
+}
+#see-all:hover {
+  background-color: #6c0ac1ea;
+  color: #eee;
+}
+footer {
+  background-color: black;
+}
+footer .call-to-action-2 {
+  display: flex;
+  /* grid-template-columns: repeat(3, 1fr); */
+  justify-content: space-around;
+  font-size: 12px;
+  padding: 2em;
+  /* gap: 20px; */
+}
+/* .call-to-action-2 .part-1{
+  border:2px solid white;
+} */
+.call-to-action-2 .socials {
+  margin-top: 20px;
+  text-align: right;
+}
+/* footer .call-to-action-2{
+  flex-direction: column;
+} */
+/* .call-to-action-2 nav{
+  display: flex;
+  flex-wrap: nowrap;
+} */
+.call-to-action-2 nav ul {
+  list-style: none;
+  margin-top: 2rem;
+}
+.call-to-action-2 nav ul li {
+  display: inline-block;
+}
+.call-to-action-2 nav ul li {
+  margin-left: 3rem;
+}
+.call-to-action-2 nav li a {
+  text-decoration: none;
+  color: #eee;
+}
+footer .socials svg + svg {
+  margin-left: 10px;
+}
+/* .call-to-action-2 nav ul li a + a{
+  
+} */
+@media (max-width: 768px) {
+  /* body {
+    width: 100%;
+  } */
+
+  header .call-to-action {
+    height: 60px;
+    justify-content: space-around;
+  }
+  .call-to-action nav {
+    display: none;
+  }
+  label {
+    display: block;
+  }
+  .call-to-action .logo {
+    margin-left: 0;
+  }
+
+  .section-1 {
+    grid-template-columns: 1fr;
+    /* grid-template-rows: repeat(2, 180px); */
+    grid-template-areas:
+      "image"
+      "write-up";
+    padding: 20px;
+    margin-top: 80px;
+  }
+  .section-1 .write-up {
+    grid-area: write-up;
+    text-align: center;
+
+    /* padding-inline: .75em; */
+  }
+  .section-1 .write-up p {
+    line-height: 2;
+    padding: 10px;
+  }
+  .section-1 .img {
+    grid-area: image;
+  }
+  .section-intro {
+    justify-content: center;
+  }
+  .section-intro button {
+    display: none;
+  }
+  .section-2 .features {
+    grid-template-columns: repeat(auto-fit, 160px);
+  }
+  footer .call-to-action-2 {
+    flex-direction: column;
+  }
+  header .intro {
+    position: static;
+    margin: 140px auto;
+  }
+  #see-all {
+    display: block;
+  }
+}
+@media (max-width: 375px) {
+  header {
+    background-image: url(images/mobile/image-hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100svh;
+    background-position: center;
+    width: 100%;
+  }
+
+  .section-2 .features {
+    grid-template-columns: 1fr;
+    /* grid-template-rows: repeat(auto-fit, 20px);  */
+  }
+  .features .feature {
+    height: 90px;
+  }
+  .section-2 {
+    padding-inline: 20px;
+  }
+  .feature:nth-child(1) {
+    background-image: url(images/mobile/image-deep-earth.jpg);
+    background-size: cover;
+  }
+  .feature:nth-child(2) {
+    background-image: url(images/mobile/image-night-arcade.jpg);
+    background-size: cover;
+  }
+  .feature:nth-child(3) {
+    background-image: url(images/mobile/image-soccer-team.jpg);
+    background-size: cover;
+  }
+  .feature:nth-child(4) {
+    background-image: url(images/mobile/image-grid.jpg);
+    background-size: cover;
+  }
+  .feature:nth-child(5) {
+    background-image: url(images/mobile/image-from-above.jpg);
+    background-size: cover;
+  }
+  .feature:nth-child(6) {
+    background-image: url(images/mobile/image-pocket-borealis.jpg);
+    background-size: cover;
+  }
+  .feature:nth-child(7) {
+    background-image: url(images/mobile/image-curiosity.jpg);
+    background-size: cover;
+  }
+  .feature:nth-child(8) {
+    background-image: url(images/mobile/image-fisheye.jpg);
+    background-size: cover;
+  }
+}
+@media (max-width: 560px) {
+  .call-to-action-2 nav ul li {
+    display: block;
+    margin: 20px 0;
+  }
+  .call-to-action-2 .part-1,
+  .call-to-action-2 .socials {
+    text-align: center;
+  }
+}

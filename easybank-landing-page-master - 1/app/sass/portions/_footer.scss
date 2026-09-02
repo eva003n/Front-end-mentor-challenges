@@ -1,0 +1,55 @@
+@use "../globals" as c;
+@use "../util/" as u;
+footer {
+  text-align: u.getAlignment(default);
+  background: c.$dark-blue;
+  margin-top: 5rem;
+
+  .section1 {
+    padding-block: 1em;
+    .social-links {
+      margin-top: 1rem;
+    }
+  }
+  .links {
+    ul {
+      li {
+        margin-block: 1rem;
+        a {
+          &:hover,
+          &:focus {
+            color: c.$bright-cyan;
+          }
+        }
+      }
+    }
+  }
+.social-links a + a{
+margin-left: 1rem;
+}
+  .cta {
+    > a {
+      display: inline-block;
+      margin-block: 1rem;
+    }
+    > p {
+      margin: 0;
+    }
+  }
+}
+@include u.breakpoints-up(medium) {
+  footer {
+    @include u.about-us-grid(4, 1fr);
+    padding-inline: 2em;
+    .links {
+      li {
+        text-align: left;
+      }
+    }
+  }
+}
+@include u.breakpoints-up(ex-large) {
+  footer {
+    padding-inline: 4em;
+  }
+}

@@ -1,0 +1,37 @@
+@use "../abstracts/" as a;
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 0.94rem;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: a.$verydarkBlue;
+  display: inline-block;
+  transition: color 0.5s ease-in-out;
+}
+a:hover,
+a:focus {
+  color: a.$softOrange;
+  cursor: pointer;
+}
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  font-style: italic;
+  height: auto;
+}

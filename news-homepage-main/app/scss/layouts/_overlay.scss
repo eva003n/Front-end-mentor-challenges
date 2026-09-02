@@ -1,0 +1,41 @@
+@use "../abstracts/" as a;
+.overlay {
+  position: fixed;
+  background: a.$verydarkBlue;
+  visibility: hidden;
+  inset: 0 0 0 0;
+  &.appear {
+    animation: fade_in 0.5s ease-in-out forwards;
+  }
+  &.disappear {
+    animation: fade_out 0.5s ease-in-out forwards;
+  }
+}
+@keyframes fade_in {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 0.5;
+    visibility: visible;
+  }
+}
+@keyframes fade_out {
+  0% {
+    opacity: 0.5;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@include a.breakpoint-up(medium) {
+  .overlay {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    top: 0;
+  }
+}

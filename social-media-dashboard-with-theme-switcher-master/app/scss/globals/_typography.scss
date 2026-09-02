@@ -1,0 +1,13 @@
+@use "../utils/maps" as u;
+//typography
+h1,
+h2 {
+  margin: 0;
+}
+h1 {
+    font-size: 1.5rem;
+    font-weight: map-get(u.$font-weights, bold );
+}
+.total-followers {
+  margin: 0;
+}
