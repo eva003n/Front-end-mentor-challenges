@@ -3,7 +3,7 @@ const inputElement = document.querySelector(".js-input-element");
 const submitButton = document.querySelector(".js-submit-button");
 const listElement = document.querySelector(".js-results");
 
-const apikeyCode = "at_v5GQYlvAHkVmH2JzFXbmJHsrncDNp";
+
 let ipData = JSON.parse( localStorage.getItem("ipDetails")) || [];
 //render data from local storage fi exists
 renderHtml();
