@@ -11,15 +11,14 @@
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Frontend Mentor | Typing Speed Test</title>
   </head>
   <body class="grid">
-    <header class="grid header">
+    <header class="grid wrapper header">
       <div class="flex header-top">
         <div class="header-left">
           <!-- logo -->
-
           <div class="logo-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +136,7 @@
           >
             <p class="difficulty-txt">Difficulty:</p>
             <!-- Select button -->
-            <div class="flex select-button" tabindex="0">
+            <div class="flex dropdown" tabindex="0">
               <!-- Selected value -->
               <span>Hard</span>
               <span class="arrow-down">
@@ -158,15 +157,15 @@
             <!-- Drop down -->
             <ul class="flex select-dropdown">
               <li role="option" tabindex="-1" data-value="Easy">
-                <label for="difficulty" class="grid form-control">
+                <label for="difficulty" class="flex option">
                   <input type="radio" id="difficulty" name="difficultu" />
                   Easy</label
                 >
               </li>
 
               <li role="option" tabindex="-1" data-value="Medium">
-                <label for="difficulty" class="grid form-control">
-                  <input type="radio" id="difficulty" name="difficulty" />
+                <label for="difficulty" class="flex option">
+                  <input type="radio" id="difficult" name="difficult" />
                   Medium</label
                 >
               </li>
@@ -176,7 +175,7 @@
                 data-value="hard"
                 aria-selected="true"
               >
-                <label for="difficulty" class="grid form-control">
+                <label for="difficulty" class="flex option" >
                   <input type="radio" id="difficulty" name="difficulty" />
                   Hard</label
                 >
@@ -212,14 +211,14 @@
             <!-- Drop down -->
             <ul class="flex select-dropdown">
               <li role="option" tabindex="-1" data-value="Timed (60s)">
-                <label for="mode" class="grid form-control">
+                <label for="mode" class="flex option">
                   <input type="radio" id="mode" name="mode" />
                   Timed (60s)</label
                 >
               </li>
 
               <li role="option" tabindex="-1" data-value="Passage">
-                <label for="mode" class="grid form-control">
+                <label for="mode" class="flex option">
                   <input type="radio" id="mode" name="mode" />
                   Passage</label
                 >
@@ -229,86 +228,91 @@
         </div>
       </div>
     </header>
-    <section>
-      <!-- Passage -->
+    <main class="wrapper typing-area">
       <div class="flex overlay">
         <button>Start Typing Test</button>
         <p>Or click the text and start typing</p>
       </div>
-      <div class="typing-area">
-        <textarea>
+      <section>
+        <!-- Passage -->
+
+        <div >
+          <textarea id="editor" readonly autofocus>
           The philosopher’s argument hinged on a seemingly paradoxical assertion: that absolute freedom, pursued without constraint, inevitably undermines itself. She urged readers to consider how the libertarian ideal, when taken to its logical extreme, creates conditions in which the powerful dominate the weak, thereby eliminating freedom for the majority. While critics dismissed her reasoning as sophistry, her supporters regarded it as profound. Similarly, quantum entanglement—Einstein’s so-called “spooky action at a distance”—continues to perplex physicists and philosophers alike, as measuring one particle instantaneously affects another regardless of the space between them. Though this phenomenon does not violate relativity, it challenges our intuitions about locality, causality, and reality itself. The Renaissance polymath offered another model of intellectual breadth: in a single week he discussed astronomy, critiqued architectural plans, proposed civic improvements, and even composed poetry, joking that specialization was for insects. His contemporaries found him exhausting, yet posterity finds him inspirational. In modern times, algorithmic trading has similarly reshaped financial markets, with high-frequency systems executing thousands of transactions per second; critics warn of systemic fragility, recalling events like the Flash Crash, while proponents argue such systems provide liquidity and benefit everyday investors. Ethical tensions also arise in biography, where the discovery of private journals can overturn a carefully curated public image, forcing writers to choose between truth-telling and respect for the dead. Environmental science presents its own concerns: microplastics have spread into nearly every ecosystem, appearing even in human tissue, their long-term health effects still uncertain, amounting to an unprecedented experiment on planetary biology. In the arts, a conductor’s interpretation of Mahler’s Ninth Symphony highlighted themes of mortality and cultural collapse, leaving audiences in stunned silence. Political theory grapples with the counter-majoritarian difficulty, questioning how unelected judges overturning democratic decisions can coexist with popular sovereignty, a tension that may never fully resolve. Literary style, too, reflects philosophical unease, as some novelists use fragmented narratives to mirror memory’s unreliability and identity’s fluidity, arguing that clarity itself can deceive. Even archaeology revises our assumptions, with discoveries of far-flung trade goods in ancient tombs suggesting that globalization, far from modern, has deep historical roots.
-        </textarea>
-      </div>
-      <div class="flex results">
-        <div class="flex results-top">
-          <div class="flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="64"
-              height="64"
-              fill="none"
-              viewBox="0 0 64 64"
-            >
-              <g clip-path="url(#a)">
-                <path
-                  fill="#121212"
-                  d="M0 32C0 14.327 14.327 0 32 0s32 14.327 32 32-14.327 32-32 32S0 49.673 0 32"
-                />
-                <path
-                  fill="#4dd67b"
-                  fill-rule="evenodd"
-                  d="M45.45 26.01 29.895 41.567a2.51 2.51 0 0 1-1.785.741c-.65 0-1.294-.245-1.79-.74l-7.777-7.778a2.527 2.527 0 0 1 3.57-3.574l5.997 5.992 13.766-13.77a2.527 2.527 0 1 1 3.574 3.574M32 0C14.356 0 0 14.356 0 32c0 17.647 14.356 32 32 32s32-14.353 32-32C64 14.356 49.644 0 32 0"
-                  clip-rule="evenodd"
-                />
-              </g>
-              <defs>
-                <clipPath id="a">
+        </textarea
+          >
+        </div>
+        <div class="flex results">
+          <div class="flex results-top">
+            <div class="flex">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="64"
+                height="64"
+                fill="none"
+                viewBox="0 0 64 64"
+              >
+                <g clip-path="url(#a)">
                   <path
-                    fill="#fff"
+                    fill="#121212"
                     d="M0 32C0 14.327 14.327 0 32 0s32 14.327 32 32-14.327 32-32 32S0 49.673 0 32"
                   />
-                </clipPath>
-              </defs>
-            </svg>
-            <h2>Test Complete!</h2>
-            <p>Solid run. Keep pushing to beat your high score.</p>
+                  <path
+                    fill="#4dd67b"
+                    fill-rule="evenodd"
+                    d="M45.45 26.01 29.895 41.567a2.51 2.51 0 0 1-1.785.741c-.65 0-1.294-.245-1.79-.74l-7.777-7.778a2.527 2.527 0 0 1 3.57-3.574l5.997 5.992 13.766-13.77a2.527 2.527 0 1 1 3.574 3.574M32 0C14.356 0 0 14.356 0 32c0 17.647 14.356 32 32 32s32-14.353 32-32C64 14.356 49.644 0 32 0"
+                    clip-rule="evenodd"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="a">
+                    <path
+                      fill="#fff"
+                      d="M0 32C0 14.327 14.327 0 32 0s32 14.327 32 32-14.327 32-32 32S0 49.673 0 32"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+              <h2>Test Complete!</h2>
+              <p>Solid run. Keep pushing to beat your high score.</p>
+            </div>
           </div>
-        </div>
-        <div class="flex stats results-stats">
-          <div class="flex unit-value">
-            <p>WPM:</p>
-            <span>40</span>
+          <div class="flex stats results-stats">
+            <div class="flex unit-value">
+              <p>WPM:</p>
+              <span>40</span>
+            </div>
+            <div class="flex accuracy">
+              <p>Accuracy:</p>
+              <span>94%</span>
+            </div>
+            <div class="flex time">
+              <p>Characters:</p>
+              <span>120/5</span>
+            </div>
           </div>
-          <div class="flex accuracy">
-            <p>Accuracy:</p>
-            <span>94%</span>
-          </div>
-          <div class="flex time">
-            <p>Characters:</p>
-            <span>120/5</span>
-          </div>
-        </div>
 
-        <div class="flex btn">
-          <button class="flex">
-            Go Again
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="none"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill="#fff"
-                d="M1.563 1.281h.949c.246 0 .422.211.422.457l-.07 3.446a8.6 8.6 0 0 1 7.277-3.868c4.816 0 8.718 3.938 8.718 8.72-.035 4.816-3.937 8.683-8.718 8.683a8.86 8.86 0 0 1-5.871-2.215.446.446 0 0 1 0-.633l.703-.703c.14-.14.386-.14.562 0 1.23 1.09 2.813 1.723 4.606 1.723A6.88 6.88 0 0 0 17.03 10c0-3.797-3.093-6.89-6.89-6.89-2.813 0-5.203 1.687-6.293 4.078l4.43-.106c.245 0 .456.176.456.422v.95c0 .245-.21.421-.421.421h-6.75a.406.406 0 0 1-.422-.422v-6.75c0-.21.175-.422.422-.422"
-              />
-            </svg>
-          </button>
+          <div class="flex btn">
+            <button class="flex">
+              Go Again
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill="#fff"
+                  d="M1.563 1.281h.949c.246 0 .422.211.422.457l-.07 3.446a8.6 8.6 0 0 1 7.277-3.868c4.816 0 8.718 3.938 8.718 8.72-.035 4.816-3.937 8.683-8.718 8.683a8.86 8.86 0 0 1-5.871-2.215.446.446 0 0 1 0-.633l.703-.703c.14-.14.386-.14.562 0 1.23 1.09 2.813 1.723 4.606 1.723A6.88 6.88 0 0 0 17.03 10c0-3.797-3.093-6.89-6.89-6.89-2.813 0-5.203 1.687-6.293 4.078l4.43-.106c.245 0 .456.176.456.422v.95c0 .245-.21.421-.421.421h-6.75a.406.406 0 0 1-.422-.422v-6.75c0-.21.175-.422.422-.422"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
+
     <script src="index.js"></script>
   </body>
 </html>

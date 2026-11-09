@@ -1,4 +1,9 @@
-const textbox = document.querySelector("textarea");
+const editor = document.querySelector("#editor");
+
+editor.addEventListener("input", (e) =>
+    console.log(e) 
+)
+
 const difficultyLevel = document.getElementById("difficulty")
 
 

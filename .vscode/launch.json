@@ -1,0 +1,29 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "firefox",
+      "request": "launch",
+      "name": "Launch firefox aganist live server",
+      "url": "http://localhost:5500/Design-based/interactive-comments-section-main/index.html",
+      "webRoot": "${workspaceFolder}",
+      "port": 6000,
+      "pathMappings": [
+        {
+          "url": "http://localhost:5500",
+          "path": "${workspaceFolder}"
+        }
+      ]
+    },
+    {
+      "type": "chrome",
+      "name": "Launch chrome aganist live server",
+      "request": "launch",
+      "url": "http://localhost:5500/Design-based/interactive-comments-section-main/index.html",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}

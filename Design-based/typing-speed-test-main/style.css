@@ -4,7 +4,7 @@
   font-family: "Sora";
   font-style: normal;
   font-weight: 400;
-  src: url("/assets/fonts/sora-v17-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("assets/fonts/sora-v17-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* sora-600 - latin */
 @font-face {
@@ -12,7 +12,7 @@
   font-family: "Sora";
   font-style: normal;
   font-weight: 600;
-  src: url("/assets/fonts/sora-v17-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("assets/fonts/sora-v17-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* sora-700 - latin */
 @font-face {
@@ -37,7 +37,8 @@
   --neutral-400: hsl(240, 1%, 59%);
   --neutral-0: hsl(0, 0%, 100%);
 
-  --fz-sm: 1rem;
+  --fz-sm: 0.875rem; /* labels */
+  --fz-md: 1rem; /* labels */
 
   --fw-400: 400;
   --fw-600: 600;
@@ -52,12 +53,14 @@
   padding: 0;
 }
 
+
 body {
   /* min-height: 100svh; */
   font-size: var(--fz-sm);
   background: var(--neutral-900);
   padding-block: 1rem;
-  color: var(--neutral-0);
+
+  color: var(--neutral-400);
   font-family: "Sora", sans-serif;
   font-weight: var(--fw-400);
   flex-direction: column;
@@ -93,12 +96,15 @@ input, label, textarea {
   display: flex;
   gap: var(--gap, 1rem);
 }
-
+.wrapper {
+    width: min(90%, 56rem);
+  margin-inline: auto;
+}
 .header {
   align-self: baseline;
   align-items: center;
   /* padding-inline: 1rem; */
-  width: min(90%, 75rem);
+  /* width: min(90%, 75rem); */
   margin: auto;
   flex-wrap: nowrap;
 }
@@ -130,6 +136,7 @@ input, label, textarea {
 .header-bottom {
   color: var(--neutral-400);
   flex-direction: column;
+  justify-content: space-between;
 }
 .unit-value,
 .accuracy,
@@ -180,7 +187,7 @@ input, label, textarea {
   width: 150px;
   color: var(--neutral-0);
 }
-.select-button {
+.dropdown {
   --gap: 0.5rem;
   border: 1px solid var(--neutral-500);
   padding: 8px 20px;
@@ -192,7 +199,12 @@ input, label, textarea {
 
 /* When drop down is closed arrows point up */
 .arrow-down {
+  transform: initial;
+
+}
+.arrow-up {
   transform: rotate(180deg);
+
 }
 
 .select-dropdown {
@@ -223,9 +235,8 @@ input, label, textarea {
 }
 
 /* custom radio input */
-.form-control {
+.option {
   --gap: 0.5em;
-  grid-template-columns: 1em auto;
   align-items: center;
 }
 
@@ -264,9 +275,9 @@ input[type="radio"]:checked::before {
   transform: scale(1);
 }
 
+
 section {
   position: relative;
-  width: min(90%, 75rem);
   /* total height - 2 * (1rem padding) + 1rem (gap) */
   height: calc(100svh - 86px - 3rem);
   margin: auto;
@@ -274,16 +285,21 @@ section {
   overflow: hidden;
 }
 
+.typing-area {
+  position: relative;
+
+}
 .overlay {
   position: absolute;
   z-index: 10;
   background: transparent;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(2px);
   flex-direction: column;
   justify-content: center;
   align-items: center;
   inset: 0;
-  font-weight: var(--fw-600);
+  color: var(--neutral-0);
+
   display: none;
 }
 .overlay  button{   
@@ -292,7 +308,7 @@ section {
 
 }
 section > div {
-    width: 100%;
+  width: 100%;
   height: 100%;
 }
 
@@ -343,7 +359,7 @@ section > div > textarea {
 
 
 
-@media screen and (min-width: 43.75rem) {
+@media (min-width: 43.75rem) {
   .logo-lrg {
     display: flex;
     flex-shrink: 0;
@@ -354,6 +370,7 @@ section > div > textarea {
 
   .header-bottom {
     flex-direction: row;
+    
     /* gap: 140px; */
     /* justify-content: space-between; */
   }
@@ -366,7 +383,7 @@ section > div > textarea {
   }
 
   .header-bottom .header-right {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     flex-wrap: wrap;
     align-items: center;
     /* margin-left:  30%; */
@@ -394,6 +411,10 @@ section > div > textarea {
     position: static;
     width: auto;
   }
+
+  .dropdown {
+    display: none;
+  }
   .select-dropdown {
     flex-direction: row;
     position: static;
@@ -420,8 +441,8 @@ section > div > textarea {
       linear-gradient(180deg, var(--blue-600), var(--blue-400));
     background-clip: padding-box, border-box, text;
     -webkit-background-clip: padding-box, border-box, text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+    /* color: transparent; */
+    /* -webkit-text-fill-color: transparent; */
   }
 
   .unit-value,
